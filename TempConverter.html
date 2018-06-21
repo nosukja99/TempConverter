@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+<title>Title</title>
+</head>
+
+<body>
+
+<form>
+Celsius: <input type="text" size="15" name="celsius"><br/>
+Fahrenheit: <input type="text" size="15" name="fahrenheit"><br/>
+<input type="button" value="Calculate" onclick="temp(this.form)"> 
+</form>
+</br>
+<img id="image" height="150" width="150" alt="weather img"/>
+
+<script type="text/javascript">
+function temp (form) {
+  if(form.celsius.value)
+  {
+	form.fahrenheit.value = form.celsius.value*1.8+32;
+	if(form.fahrenheit.value<32)
+	  {
+		document.getElementById("image").src="https://c.o0bg.com/rf/image_960w/Boston/2011-2020/2017/02/22/BostonGlobe.com/Ideas/Images/0226snowflake4.jpg";
+	  }
+  }
+  else if(form.fahrenheit.value)
+  {
+	form.celsius.value = (form.fahrenheit.value-32)*0.6; 
+	if(form.celsius.value<0)
+	  {
+		document.getElementById("image").src="https://c.o0bg.com/rf/image_960w/Boston/2011-2020/2017/02/22/BostonGlobe.com/Ideas/Images/0226snowflake4.jpg";
+	  }
+  }
+}
+</script> 
+</body>
+
+</html>
